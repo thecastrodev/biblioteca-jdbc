@@ -8,21 +8,26 @@ public class Acessos {
 
 	public Acessos() {
 		int escolha = 0;
-		System.out.println("=== BEM-VINDO A BIBLIOTECA === \n" + "1 - Login \n2 - Cadastrar Novo Usuario \n3 - Sair"
-				+ "\n=============================== ");
+		System.out.println("=== BEM-VINDO A BIBLIOTECA === \n" + "1 - Login \n" + "2 - Cadastrar Novo Usuario \n"
+				+ "3 - Sair" + "\n=============================== ");
 		escolha = scanner.nextInt();
-		// força a escolha de uma opção
+
+		// forï¿½a a escolha de uma opcao
 		while (escolha < 1 || escolha > 3) {
-			System.out.println("Escolha uma opção valida:");
+			System.out.println("Escolha uma opcao valida:");
 			escolha = scanner.nextInt();
 		}
 
-		// caso login
-		if (escolha == 1) {
+		switch (escolha) {
+		case 1:
 			login();
-		} else {
-			// caso cadastro
+			break;
+		case 2:
 			cadastro();
+			break;
+		case 3:
+			System.exit(1);
+			break;
 		}
 	}
 
@@ -41,7 +46,7 @@ public class Acessos {
 		System.out.println("================================");
 
 		// se estiver tudo ok, armazenar as informacoes do usuario pesquisado no banco
-		// em um usuarioAtualLogado, logar na aplicação
+		// em um usuarioAtualLogado, logar na aplicaï¿½ï¿½o
 	}
 
 	public void cadastro() {
@@ -57,7 +62,7 @@ public class Acessos {
 		senha = verificaFormatacaoCorreta(senha, 30);
 		System.out.println("Digite o seu nome:");
 		nome = verificaFormatacaoCorreta(nome, 45);
-		System.out.println("Digite seu endereço:");
+		System.out.println("Digite seu endereï¿½o:");
 		endereco = verificaFormatacaoCorreta(endereco, 50);
 
 		criarUsuario(CPF, senha, endereco, nome);
