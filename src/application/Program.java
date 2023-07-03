@@ -1,12 +1,12 @@
 package application;
 
-import application.test.LivroTest;
+import application.test.FuncionarioTest;
 
 public class Program {
 
 	public static void main(String[] args) {
-		LivroTest cat = new LivroTest();
-		cat.init();
+		FuncionarioTest alu = new FuncionarioTest();
+		alu.init();
 	}
 
 }

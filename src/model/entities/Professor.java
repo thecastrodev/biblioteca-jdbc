@@ -9,6 +9,8 @@ public class Professor extends Usuario {
 	private String regimeDeTrabalho;
 	private Curso curso;
 	
+	public Professor() {}
+	
 	public Professor(String nome, String edereco, String CPF,String senha, String matSiape, String regimeDeTrabalho, Curso curso, ArrayList<String> listaTelefones) {
 		super(CPF, edereco, nome, senha, listaTelefones);
 		this.matSiape = matSiape;

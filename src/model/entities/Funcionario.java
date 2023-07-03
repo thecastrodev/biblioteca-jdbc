@@ -7,6 +7,8 @@ public class Funcionario extends Usuario {
 	
 	private String mat;
 	
+	public Funcionario() {}
+	
 	public Funcionario(String nome, String CPF, String endereco, String mat, String senha, ArrayList<String> listaTelefones) {
 		super(CPF, endereco, nome, senha, listaTelefones);
 		this.mat = mat;

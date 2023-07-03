@@ -6,33 +6,35 @@ import java.util.Objects;
 public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private String codCurso;
-	private String nomeCurso;
+	private String codigo;
+	private String nome;
 	
-	public Curso( String codCurso, String nomeCurso) {
-		this.codCurso = codCurso;
-		this.nomeCurso = nomeCurso;
+	public Curso() {}
+	
+	public Curso( String codigo, String nome) {
+		this.codigo = codigo;
+		this.nome = nome;
 	}
 
-	public String getCodCurso() {
-		return codCurso;
+	public String getCodigo() {
+		return codigo;
 	}
 
-	public void setCodCurso(String codCurso) {
-		this.codCurso = codCurso;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
-	public String getNomeCurso() {
-		return nomeCurso;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeCurso(String nomeCurso) {
-		this.nomeCurso = nomeCurso;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(codCurso);
+		return Objects.hash(codigo);
 	}
 
 	@Override
@@ -44,11 +46,11 @@ public class Curso implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Curso other = (Curso) obj;
-		return Objects.equals(codCurso, other.codCurso);
+		return Objects.equals(codigo, other.codigo);
 	}
 
 	@Override
 	public String toString() {
-		return "Curso [codCurso=" + codCurso + ", nomeCurso=" + nomeCurso + "]";
+		return "Curso [codigo=" + codigo + ", nome=" + nome + "]";
 	}
 }
