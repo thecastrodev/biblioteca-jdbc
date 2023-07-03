@@ -2,7 +2,7 @@ package application;
 
 import java.util.Scanner;
 
-public class Acessos {
+public class Acessos { 
 
 	Scanner scanner = new Scanner(System.in);
 
@@ -12,7 +12,7 @@ public class Acessos {
 				+ "3 - Sair" + "\n=============================== ");
 		escolha = scanner.nextInt();
 
-		// for�a a escolha de uma opcao
+		// forcar a escolha de uma opcao
 		while (escolha < 1 || escolha > 3) {
 			System.out.println("Escolha uma opcao valida:");
 			escolha = scanner.nextInt();
@@ -46,7 +46,7 @@ public class Acessos {
 		System.out.println("================================");
 
 		// se estiver tudo ok, armazenar as informacoes do usuario pesquisado no banco
-		// em um usuarioAtualLogado, logar na aplica��o
+		// em um usuarioAtualLogado, logar na aplicacao
 	}
 
 	public void cadastro() {
