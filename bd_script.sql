@@ -8,21 +8,21 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema bibliotecaufc
+-- Schema equipe494627
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema bibliotecaufc
+-- Schema equipe494627
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `bibliotecaufc` ;
-USE `bibliotecaufc` ;
+CREATE SCHEMA IF NOT EXISTS `equipe494627` ;
+USE `equipe494627` ;
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Editora`
+-- Table `equipe494627`.`Editora`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Editora` ;
+DROP TABLE IF EXISTS `equipe494627`.`Editora` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Editora` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Editora` (
   `cod_editora` VARCHAR(10)   NOT NULL,
   `nome_editora` VARCHAR(45)   NOT NULL,
   PRIMARY KEY (`cod_editora`))
@@ -30,11 +30,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Categoria`
+-- Table `equipe494627`.`Categoria`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Categoria` ;
+DROP TABLE IF EXISTS `equipe494627`.`Categoria` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Categoria` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Categoria` (
   `cod_categoria` VARCHAR(10) NOT NULL,
   `nome_categoria` VARCHAR(45)   NULL,
   PRIMARY KEY (`cod_categoria`))
@@ -42,11 +42,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Livro`
+-- Table `equipe494627`.`Livro`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Livro` ;
+DROP TABLE IF EXISTS `equipe494627`.`Livro` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Livro` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Livro` (
   `ISBN` VARCHAR(20)  NOT NULL,
   `titulo` VARCHAR(40)   NOT NULL,
   `ano_de_lancamento` CHAR(4) NOT NULL,
@@ -59,23 +59,23 @@ CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Livro` (
   INDEX `fk_Livro_Categoria1_idx` (`cod_categoria` ASC) VISIBLE,
   CONSTRAINT `fk_Livro_Editora`
     FOREIGN KEY (`cod_editora`)
-    REFERENCES `bibliotecaufc`.`Editora` (`cod_editora`)
+    REFERENCES `equipe494627`.`Editora` (`cod_editora`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Livro_Categoria`
     FOREIGN KEY (`cod_categoria`)
-    REFERENCES `bibliotecaufc`.`Categoria` (`cod_categoria`)
+    REFERENCES `equipe494627`.`Categoria` (`cod_categoria`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Autor`
+-- Table `equipe494627`.`Autor`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Autor` ;
+DROP TABLE IF EXISTS `equipe494627`.`Autor` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Autor` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Autor` (
   `email` VARCHAR(100)  NOT NULL,
   `nome_autor` VARCHAR(45) NOT NULL,
   `nacionalidade` VARCHAR(45) NOT NULL,
@@ -86,11 +86,11 @@ ENGINE = InnoDB
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Usuario`
+-- Table `equipe494627`.`Usuario`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Usuario` ;
+DROP TABLE IF EXISTS `equipe494627`.`Usuario` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Usuario` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Usuario` (
   `senha` VARCHAR(30)  NOT NULL,
   `nome_usuario` VARCHAR(45)  NOT NULL,
   `endereco` VARCHAR(50) NULL,
@@ -102,11 +102,11 @@ ENGINE = InnoDB
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Curso`
+-- Table `equipe494627`.`Curso`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Curso` ;
+DROP TABLE IF EXISTS `equipe494627`.`Curso` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Curso` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Curso` (
   `cod_curso` VARCHAR(10)  NOT NULL,
   `nome_curso` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`cod_curso`))
@@ -115,11 +115,11 @@ ENGINE = InnoDB
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Aluno`
+-- Table `equipe494627`.`Aluno`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Aluno` ;
+DROP TABLE IF EXISTS `equipe494627`.`Aluno` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Aluno` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Aluno` (
   `mat` VARCHAR(6) NOT NULL,
   `data_de_ingresso` DATETIME NOT NULL,
   `data_de_conclusao_prevista` DATETIME NOT NULL,
@@ -130,23 +130,23 @@ CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Aluno` (
   INDEX `fk_Aluno_Curso1_idx` (`cod_curso` ASC) VISIBLE,
   CONSTRAINT `fk_Aluno_Usuario1`
     FOREIGN KEY (`CPF`)
-    REFERENCES `bibliotecaufc`.`Usuario` (`CPF`)
+    REFERENCES `equipe494627`.`Usuario` (`CPF`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Aluno_Curso1`
     FOREIGN KEY (`cod_curso`)
-    REFERENCES `bibliotecaufc`.`Curso` (`cod_curso`)
+    REFERENCES `equipe494627`.`Curso` (`cod_curso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Professor`
+-- Table `equipe494627`.`Professor`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Professor` ;
+DROP TABLE IF EXISTS `equipe494627`.`Professor` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Professor` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Professor` (
   `mat_siape` VARCHAR(10) NOT NULL,
   `data_de_contratacao` DATETIME NOT NULL,
   `regime_de_trabalho` ENUM('20h', '40h', 'DE') NOT NULL,
@@ -157,41 +157,41 @@ CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Professor` (
   INDEX `fk_Professor_Curso1_idx` (`cod_curso` ASC) VISIBLE,
   CONSTRAINT `fk_Professor_Usuario`
     FOREIGN KEY (`CPF`)
-    REFERENCES `bibliotecaufc`.`Usuario` (`CPF`)
+    REFERENCES `equipe494627`.`Usuario` (`CPF`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Professor_Curso`
     FOREIGN KEY (`cod_curso`)
-    REFERENCES `bibliotecaufc`.`Curso` (`cod_curso`)
+    REFERENCES `equipe494627`.`Curso` (`cod_curso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Funcionario`
+-- Table `equipe494627`.`Funcionario`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Funcionario` ;
+DROP TABLE IF EXISTS `equipe494627`.`Funcionario` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Funcionario` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Funcionario` (
   `mat` VARCHAR(10) NOT NULL,
   `CPF` CHAR(11)  NOT NULL,
   PRIMARY KEY (`CPF`),
   INDEX `fk_Funcionario_Usuario1_idx` (`CPF` ASC) VISIBLE,
   CONSTRAINT `fk_Funcionario_Usuario1`
     FOREIGN KEY (`CPF`)
-    REFERENCES `bibliotecaufc`.`Usuario` (`CPF`)
+    REFERENCES `equipe494627`.`Usuario` (`CPF`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Reserva`
+-- Table `equipe494627`.`Reserva`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Reserva` ;
+DROP TABLE IF EXISTS `equipe494627`.`Reserva` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Reserva` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Reserva` (
   `ISBN` VARCHAR(20)  NOT NULL,
   `CPF` CHAR(11)  NOT NULL,
   `data_de_reserva` DATE NOT NULL,
@@ -200,23 +200,23 @@ CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Reserva` (
   INDEX `fk_Reserva_Usuario1_idx` (`CPF` ASC) VISIBLE,
   CONSTRAINT `fk_Reserva_Livro1`
     FOREIGN KEY (`ISBN`)
-    REFERENCES `bibliotecaufc`.`Livro` (`ISBN`)
+    REFERENCES `equipe494627`.`Livro` (`ISBN`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Reserva_Usuario1`
     FOREIGN KEY (`CPF`)
-    REFERENCES `bibliotecaufc`.`Usuario` (`CPF`)
+    REFERENCES `equipe494627`.`Usuario` (`CPF`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Livro_has_Autor`
+-- Table `equipe494627`.`Livro_has_Autor`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Livro_has_Autor` ;
+DROP TABLE IF EXISTS `equipe494627`.`Livro_has_Autor` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Livro_has_Autor` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Livro_has_Autor` (
   `ISBN` VARCHAR(20)  NOT NULL,
   `email` VARCHAR(100)  NOT NULL,
   PRIMARY KEY (`ISBN`, `email`),
@@ -224,29 +224,29 @@ CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Livro_has_Autor` (
   INDEX `fk_Livro_has_Autor_Livro1_idx` (`ISBN` ASC) VISIBLE,
   CONSTRAINT `fk_Livro_has_Autor_Livro1`
     FOREIGN KEY (`ISBN`)
-    REFERENCES `bibliotecaufc`.`Livro` (`ISBN`)
+    REFERENCES `equipe494627`.`Livro` (`ISBN`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Livro_has_Autor_Autor1`
     FOREIGN KEY (`email`)
-    REFERENCES `bibliotecaufc`.`Autor` (`email`)
+    REFERENCES `equipe494627`.`Autor` (`email`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bibliotecaufc`.`Telefone`
+-- Table `equipe494627`.`Telefone`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bibliotecaufc`.`Telefone` ;
+DROP TABLE IF EXISTS `equipe494627`.`Telefone` ;
 
-CREATE TABLE IF NOT EXISTS `bibliotecaufc`.`Telefone` (
+CREATE TABLE IF NOT EXISTS `equipe494627`.`Telefone` (
   `CPF` CHAR(11)  NOT NULL,
   `telefone` VARCHAR(14) NOT NULL,
   PRIMARY KEY (`CPF`, `telefone`),
   CONSTRAINT `fk_Telefone_Usuario1`
     FOREIGN KEY (`CPF`)
-    REFERENCES `bibliotecaufc`.`Usuario` (`CPF`)
+    REFERENCES `equipe494627`.`Usuario` (`CPF`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -257,11 +257,11 @@ ENGINE = InnoDB;
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- -----------------------------------------------------
--- View `bibliotecaufc`.`LivrosPorCategoria`
+-- View `equipe494627`.`LivrosPorCategoria`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `bibliotecaufc`.`LivrosPorCategoria`;
-USE `bibliotecaufc`;
-CREATE VIEW `bibliotecaufc`.`LivrosPorCategoria` AS
+DROP VIEW IF EXISTS `equipe494627`.`LivrosPorCategoria`;
+USE `equipe494627`;
+CREATE VIEW `equipe494627`.`LivrosPorCategoria` AS
 	SELECT ISBN, titulo, ano_de_lancamento, nome_editora editora, nome_categoria categoria, nome_autor autor
     FROM Livro l
     NATURAL JOIN Livro_has_Autor la
@@ -271,11 +271,11 @@ CREATE VIEW `bibliotecaufc`.`LivrosPorCategoria` AS
     ORDER BY c.nome_categoria;
 
 -- -----------------------------------------------------
--- View `bibliotecaufc`.`LivrosPorEditora`
+-- View `equipe494627`.`LivrosPorEditora`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `bibliotecaufc`.`LivrosPorEditora`;
-USE `bibliotecaufc`;
-CREATE VIEW `bibliotecaufc`.`LivrosPorEditora` AS
+DROP VIEW IF EXISTS `equipe494627`.`LivrosPorEditora`;
+USE `equipe494627`;
+CREATE VIEW `equipe494627`.`LivrosPorEditora` AS
 	SELECT ISBN, titulo, ano_de_lancamento, nome_editora editora, nome_categoria categoria, nome_autor autor
     FROM Livro l
     NATURAL JOIN Livro_has_Autor la
@@ -285,11 +285,11 @@ CREATE VIEW `bibliotecaufc`.`LivrosPorEditora` AS
     ORDER BY nome_editora;
 
 -- -----------------------------------------------------
--- View `bibliotecaufc`.`LivrosPorAnoDeLancamento`
+-- View `equipe494627`.`LivrosPorAnoDeLancamento`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `bibliotecaufc`.`LivrosPorAnoDeLancamento`;
-USE `bibliotecaufc`;
-CREATE VIEW `bibliotecaufc`.`LivrosPorAnoDeLancamento` AS
+DROP VIEW IF EXISTS `equipe494627`.`LivrosPorAnoDeLancamento`;
+USE `equipe494627`;
+CREATE VIEW `equipe494627`.`LivrosPorAnoDeLancamento` AS
 	SELECT ISBN, titulo, ano_de_lancamento, nome_editora editora, nome_categoria categoria, nome_autor autor
     FROM Livro l
     NATURAL JOIN Livro_has_Autor la
@@ -299,11 +299,11 @@ CREATE VIEW `bibliotecaufc`.`LivrosPorAnoDeLancamento` AS
     ORDER BY ano_de_lancamento;
 
 -- -----------------------------------------------------
--- View `bibliotecaufc`.`LivrosPorAutor`
+-- View `equipe494627`.`LivrosPorAutor`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `bibliotecaufc`.`LivrosPorAutor`;
-USE `bibliotecaufc`;
-CREATE VIEW `bibliotecaufc`.`LivrosPorAutor` AS
+DROP VIEW IF EXISTS `equipe494627`.`LivrosPorAutor`;
+USE `equipe494627`;
+CREATE VIEW `equipe494627`.`LivrosPorAutor` AS
 	SELECT ISBN, titulo, ano_de_lancamento, nome_editora editora, nome_categoria categoria, nome_autor autor
     FROM Livro l
     NATURAL JOIN Livro_has_Autor la
@@ -313,11 +313,11 @@ CREATE VIEW `bibliotecaufc`.`LivrosPorAutor` AS
     ORDER BY nome_autor;
 
 -- -----------------------------------------------------
--- View `bibliotecaufc`.`ProfessoresPorCurso`
+-- View `equipe494627`.`ProfessoresPorCurso`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `bibliotecaufc`.`ProfessoresPorCurso`;
-USE `bibliotecaufc`;
-CREATE VIEW `bibliotecaufc`.`ProfessoresPorCurso` AS
+DROP VIEW IF EXISTS `equipe494627`.`ProfessoresPorCurso`;
+USE `equipe494627`;
+CREATE VIEW `equipe494627`.`ProfessoresPorCurso` AS
 	SELECT nome_curso, mat_siape, nome_usuario, telefone
     FROM Professor p
     NATURAL JOIN Usuario u
@@ -329,14 +329,14 @@ CREATE VIEW `bibliotecaufc`.`ProfessoresPorCurso` AS
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-USE `bibliotecaufc`;
+USE `equipe494627`;
 
-DROP TRIGGER IF EXISTS `bibliotecaufc`.`tg_limite_reserva`;
+DROP TRIGGER IF EXISTS `equipe494627`.`tg_limite_reserva`;
 
 DELIMITER $$
 
-USE `bibliotecaufc`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `bibliotecaufc`.`tg_limite_reserva` BEFORE INSERT ON `Reserva` FOR EACH ROW
+USE `equipe494627`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `equipe494627`.`tg_limite_reserva` BEFORE INSERT ON `Reserva` FOR EACH ROW
 BEGIN
   DECLARE count INT;
   DECLARE limite INT;
@@ -374,13 +374,13 @@ DELIMITER ;
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE USER IF NOT EXISTS 'usuario' IDENTIFIED BY '123456';
-GRANT SELECT ON TABLE `bibliotecaufc`.* TO 'usuario';
+GRANT SELECT ON TABLE `equipe494627`.* TO 'usuario';
 
-CREATE USER IF NOT EXISTS 'Admin' IDENTIFIED BY 'Root';
-GRANT ALL ON `bibliotecaufc`.* TO 'Admin';
+-- CREATE USER IF NOT EXISTS 'Admin' IDENTIFIED BY 'Root';
+-- GRANT ALL ON `equipe494627`.* TO 'Admin';
 
 CREATE USER IF NOT EXISTS 'Bibliotecario' IDENTIFIED BY 'Root';
-GRANT SELECT, INSERT, TRIGGER ON TABLE `bibliotecaufc`.* TO 'Bibliotecario';
+GRANT SELECT, INSERT, TRIGGER ON TABLE `equipe494627`.* TO 'Bibliotecario';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -390,19 +390,19 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO `bibliotecaufc`.`Editora` (`cod_editora`, `nome_editora`) 
+INSERT INTO `equipe494627`.`Editora` (`cod_editora`, `nome_editora`) 
 VALUES ('EDT1', 'Editora ABC'), 
        ('EDT2', 'Editora XYZ');
 
 
-INSERT INTO `bibliotecaufc`.`Categoria` (`cod_categoria`, `nome_categoria`) 
+INSERT INTO `equipe494627`.`Categoria` (`cod_categoria`, `nome_categoria`) 
 VALUES ('CAT1', 'Ciências Humanas e Sociais'), 
        ('CAT2', 'Literatura Brasileira'), 
        ('CAT3', 'Ficção Científica'), 
        ('CAT4', 'Romance');
 
 
-INSERT INTO `bibliotecaufc`.`Livro` 
+INSERT INTO `equipe494627`.`Livro` 
        (`ISBN`, `titulo`, `ano_de_lancamento`, `quantidade_de_copias`, `cod_editora`, `cod_categoria`) 
 VALUES ('ISBN1', 'Livro A', '2022', 10, 'EDT1', 'CAT1'), 
        ('ISBN2', 'Livro B', '2021', 5, 'EDT2', 'CAT2'), 
@@ -412,13 +412,13 @@ VALUES ('ISBN1', 'Livro A', '2022', 10, 'EDT1', 'CAT1'),
        ('ISBN6', 'Livro F', '2020', 4, 'EDT1', 'CAT3');
 
 
-INSERT INTO `bibliotecaufc`.`Autor` (`email`, `nome_autor`, `nacionalidade`) 
+INSERT INTO `equipe494627`.`Autor` (`email`, `nome_autor`, `nacionalidade`) 
 VALUES ('autor1@example.com', 'Autor X', 'Brasileira'),
        ('autor2@example.com', 'Autor Y', 'Americana'),
        ('autor3@example.com', 'Autor Z', 'Brasileira');
 
 
-INSERT INTO `bibliotecaufc`.`Usuario` (`senha`, `nome_usuario`, `endereco`, `CPF`) 
+INSERT INTO `equipe494627`.`Usuario` (`senha`, `nome_usuario`, `endereco`, `CPF`) 
 VALUES ('123456', 'Joao Silva', 'Rua A, 123', '12345678901'),
        ('123456', 'Maria Santos', 'Rua B, 456', '12345678902'), 
        ('123456', 'Joao Santos', 'Rua E, 456', '12345678903'),
@@ -428,7 +428,7 @@ VALUES ('123456', 'Joao Silva', 'Rua A, 123', '12345678901'),
        ('123456', 'Ana Maria', 'Rua E, 846', '12345678907');
 
 
-INSERT INTO `bibliotecaufc`.`Curso` (`cod_curso`, `nome_curso`)
+INSERT INTO `equipe494627`.`Curso` (`cod_curso`, `nome_curso`)
 VALUES ('COD1', 'Engenharia de Computação'), 
        ('COD2', 'Engenharia Elétrica'),
        ('COD3', 'Música'), 
@@ -436,23 +436,23 @@ VALUES ('COD1', 'Engenharia de Computação'),
        ('COD5', 'Odontologia');
 
 
-INSERT INTO `bibliotecaufc`.`Aluno` (`mat`, `data_de_ingresso`, `data_de_conclusao_prevista`, `CPF`, `cod_curso`)
+INSERT INTO `equipe494627`.`Aluno` (`mat`, `data_de_ingresso`, `data_de_conclusao_prevista`, `CPF`, `cod_curso`)
 VALUES ('MAT_A1', '2022-03-01', '2026-12-31', '12345678901', 'COD1'), 
        ('MAT_A2', '2023-01-01', '2027-12-31', '12345678903', 'COD2');
 
 
-INSERT INTO `bibliotecaufc`.`Professor` (`mat_siape`, `data_de_contratacao`, `regime_de_trabalho`, `CPF`, `cod_curso`) 
+INSERT INTO `equipe494627`.`Professor` (`mat_siape`, `data_de_contratacao`, `regime_de_trabalho`, `CPF`, `cod_curso`) 
 VALUES ('MAT_P1', '2021-08-01', '40h', '12345678904', 'COD1'), 
        ('MAT_P2', '2022-01-01', '20h', '12345678902', 'COD2'), 
        ('MAT_P3', '2022-08-01', 'DE', '12345678905', 'COD2');
 
 
-INSERT INTO `bibliotecaufc`.`Funcionario` (`mat`, `CPF`)
+INSERT INTO `equipe494627`.`Funcionario` (`mat`, `CPF`)
 VALUES ('MAT_F1', '12345678906'), 
        ('MAT_F2', '12345678907');
 
 
-INSERT INTO `bibliotecaufc`.`Reserva` (`ISBN`, `CPF`, `data_de_reserva`) 
+INSERT INTO `equipe494627`.`Reserva` (`ISBN`, `CPF`, `data_de_reserva`) 
 VALUES ('ISBN1', '12345678901', '2023-06-14'), 
        ('ISBN2', '12345678902', '2023-06-15'), 
        ('ISBN2', '12345678907', '2023-06-16'), 
@@ -460,7 +460,7 @@ VALUES ('ISBN1', '12345678901', '2023-06-14'),
        ('ISBN3', '12345678901', '2023-06-18');
 
 
-INSERT INTO `bibliotecaufc`.`Livro_has_Autor` (`ISBN`, `email`) 
+INSERT INTO `equipe494627`.`Livro_has_Autor` (`ISBN`, `email`) 
 VALUES ('ISBN1', 'autor1@example.com'), 
        ('ISBN2', 'autor2@example.com'),
        ('ISBN4', 'autor3@example.com'), 
@@ -468,7 +468,7 @@ VALUES ('ISBN1', 'autor1@example.com'),
        ('ISBN5', 'autor2@example.com'), 
        ('ISBN6', 'autor1@example.com');
        
-INSERT INTO `bibliotecaufc`.`Telefone` (`CPF`, `telefone`) 
+INSERT INTO `equipe494627`.`Telefone` (`CPF`, `telefone`) 
 VALUES ('12345678901', '5588999999901'),
 			 ('12345678902', '5588999999902'),
 			 ('12345678904', '5588999999905'),
