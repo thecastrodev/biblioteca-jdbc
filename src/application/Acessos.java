@@ -35,7 +35,7 @@ public class Acessos {
 		String CPF;
 		String senha;
 
-		System.out.println("======Login=======");
+		System.out.println("=======Login========");
 		System.out.println("Digite o seu Login:");
 		CPF = scanner.next();
 		// verificar no banco se tem um usuario com esse CPF
