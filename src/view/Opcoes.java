@@ -102,28 +102,6 @@ public class Opcoes extends JFrame {
 					+ "Ano de Lancamento: " + obj.getAnoDeLancamento() + "\n"
 							+ "------------------------------------------------------");
 		}
-
-//		if (connection != null) {
-//			try {
-//				String consulta = "SELECT * FROM Livro";
-//				PreparedStatement statement = connection.prepareStatement(consulta);
-//				ResultSet resultado = statement.executeQuery();
-//
-//				while (resultado.next()) {
-//					// Processar os dados do resultado da consulta
-//					// Exemplo: String valor = resultado.getString("coluna");
-//				}
-//
-//				resultado.close();
-//				statement.close();
-//				connection.close();
-//			} catch (SQLException e) {
-//				throw new DbException(e.getMessage());
-//			}
-//		} else {
-//			JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados.", "Aviso",
-//					JOptionPane.WARNING_MESSAGE);
-//		}
 	}
 
 	public static void main1(String[] args) {
