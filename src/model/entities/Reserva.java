@@ -1,12 +1,14 @@
 package model.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Reserva implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Livro livro;
 	private Usuario usuario;
+	private Date dataDeReserva;
 	
 	public Reserva() {}
 	
@@ -31,8 +33,16 @@ public class Reserva implements Serializable {
 		this.usuario = usuario;
 	}
 
+	public Date getDataDeReserva() {
+		return dataDeReserva;
+	}
+
+	public void setDataDeReserva(Date dataDeReserva) {
+		this.dataDeReserva = dataDeReserva;
+	}
+
 	@Override
 	public String toString() {
-		return "Reserva [livro=" + livro + ", usuario=" + usuario + "]";
+		return "Reserva [livro=" + livro + ", usuario=" + usuario + ", dataDeReserva=" + dataDeReserva + "]";
 	}
 }

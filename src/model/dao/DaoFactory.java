@@ -36,4 +36,8 @@ public class DaoFactory {
 	public static CursoDao createCursoDao() {
 		return new CursoDaoJDBC(DB.getConnection());
 	}
+	
+	public static ReservaDao createReservaDao() {
+		return new ReservaDaoJDBC(DB.getConnection());
+	}
 }
