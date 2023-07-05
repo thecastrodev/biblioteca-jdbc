@@ -117,19 +117,25 @@ public class LivroDaoJDBC implements LivroDao {
 	}
 
 	@Override
-	public List<Livro> findByCateogria(Categoria categoria) {
+	public List<Livro> findByCategoria(String categoria) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Livro> findByEditora(Editora editora) {
+	public List<Livro> findByEditora(String editora) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Livro> findByAutor(Editora editora) {
+	public List<Livro> findByAutor(String editora) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public List<Livro> findByAnoDeLancamento(String editora) {
 		// TODO Auto-generated method stub
 		return null;
 	}

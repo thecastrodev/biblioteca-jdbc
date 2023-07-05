@@ -2,8 +2,6 @@ package model.dao;
 
 import java.util.List;
 
-import model.entities.Categoria;
-import model.entities.Editora;
 import model.entities.Livro;
 
 public interface LivroDao {
@@ -12,7 +10,8 @@ public interface LivroDao {
 	void deleteByISBN(String ISBN);
 	Livro findByISBN(String ISBN);
 	List<Livro> findAll();
-	List<Livro> findByCateogria(Categoria categoria);
-	List<Livro> findByEditora(Editora editora);
-	List<Livro> findByAutor(Editora editora);
+	List<Livro> findByCategoria(String categoria);
+	List<Livro> findByEditora(String editora);
+	List<Livro> findByAutor(String autor);
+	List<Livro> findByAnoDeLancamento(String anoDeLancamento);
 }

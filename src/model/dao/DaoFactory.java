@@ -20,23 +20,23 @@ public class DaoFactory {
 	public static LivroDao createLivroDao() {
 		return new LivroDaoJDBC(DB.getConnection());
 	}
-	
+
 	public static AlunoDao createAlunoDao() {
 		return new AlunoDaoJDBC(DB.getConnection());
 	}
-	
+
 	public static ProfessorDao createProfessorDao() {
 		return new ProfessorDaoJDBC(DB.getConnection());
 	}
-	
+
 	public static FuncionarioDao createFuncionarioDao() {
 		return new FuncionarioDaoJDBC(DB.getConnection());
 	}
-	
+
 	public static CursoDao createCursoDao() {
 		return new CursoDaoJDBC(DB.getConnection());
 	}
-	
+
 	public static ReservaDao createReservaDao() {
 		return new ReservaDaoJDBC(DB.getConnection());
 	}

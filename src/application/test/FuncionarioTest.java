@@ -7,7 +7,6 @@ import db.DB;
 import model.dao.DaoFactory;
 import model.dao.FuncionarioDao;
 import model.entities.Funcionario;
-import model.entities.Professor;
 
 public class FuncionarioTest {
 

@@ -23,7 +23,7 @@ public class Login extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public void init() {
+	public void iniciar() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

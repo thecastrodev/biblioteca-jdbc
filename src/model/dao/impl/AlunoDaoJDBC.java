@@ -78,7 +78,7 @@ public class AlunoDaoJDBC implements AlunoDao {
 		ResultSet rs = null;
 		try {
 			st = conn.prepareStatement(""
-					+ "SELECT p.mat_siape, u.CPF, u.nome_usuario, u.endereco, c.*, a.data_de_ingresso, a.data_de_conclusao_prevista "
+					+ "SELECT a.mat, u.CPF, u.nome_usuario, u.endereco, c.*, a.data_de_ingresso, a.data_de_conclusao_prevista "
 					+ "FROM Aluno a "
 					+ "NATURAL JOIN Usuario u "
 					+ "NATURAL JOIN Curso c ");
