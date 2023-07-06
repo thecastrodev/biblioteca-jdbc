@@ -59,7 +59,11 @@ public class Opcoes extends JFrame {
 		JButton btnNewButton_consultar = new JButton("Consultar Livros");
 		btnNewButton_consultar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 realizarConsulta();
+				 //realizarConsulta();
+				dispose();
+				TConsulta TConsulta = new TConsulta();
+				TConsulta.setLocationRelativeTo(null);
+				TConsulta.setVisible(true);
 			}
 		});
 		btnNewButton_consultar.setFont(new Font("Verdana", Font.PLAIN, 11));
@@ -89,7 +93,7 @@ public class Opcoes extends JFrame {
 		panel.add(btnNewButton_minhas_reservas);
 	}
 
-	private void realizarConsulta() {
+	/*private void realizarConsulta() {
 
 		LivroDao livroDao = DaoFactory.createLivroDao();
 		List<Livro> list = livroDao.findAll();
@@ -103,7 +107,7 @@ public class Opcoes extends JFrame {
 							+ "------------------------------------------------------");
 		}
 	}
-
+*/
 	public static void main1(String[] args) {
 		SwingUtilities.invokeLater(() -> {
 			Opcoes Opcoes = new Opcoes();
